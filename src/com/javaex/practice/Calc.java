@@ -13,39 +13,49 @@ public class Calc {
 		
 		while(initi==0) {
 		
-		System.out.println("1.숫자 놀이\t2.건강 검진\t3.화씨 변환\t4.구의 부피\t5.BMI\t\n6.달러 환전\t7.마일 변환\t8.소득세계산\t9.사칙연산\n0.종료");
+		System.out.println("1.숫자 놀이\t2.건강 검진\t3.화씨 변환\t4.구의 부피\t5.BMI\t\n6.달러 환전\t7.마일 변환\t8.소득세 계산\t9.사칙연산\n0.종료");
 		int select = sc.nextInt();
 		
-		if (select==1) {
-		numbergame(sc);
-		}
-		else if (select==2) {
-		health(sc);
-		}
-		else if (select==3) {
-		faran(sc);
-		}
-		else if (select==4) {
+		switch (select) {
+			case 1:
+			numbergame(sc);
+			break;
+			
+			case 2: 
+			health(sc);
+			break;
+			
+			case 3:
+			faran(sc);
+			break;
+			
+			case 4:
 			V(sc);
-		}
-		else if (select==5) {
+			break;
+			
+			case 5:
 			BMI(sc);
-		}
-		else if (select==6) {
+			break;
+			
+			case 6:
 			dollar(sc);
-		}
-		else if (select==7) {
+			break;
+			
+			case 7:
 			mile(sc);
-		}
-		else if (select==8) {
+			break;
+			
+			case 8:
 			tax(sc);
-		}
-		else if (select==9) {
+			break;
+			
+			case 9:
 			arith(sc);
-		}
-		
-		else if (select==0) {
+			break;
+			
+			case 0:
 			initi = 1;
+			break;
 		}
 		
 		}
@@ -57,7 +67,6 @@ public class Calc {
 		
 		do {
 		
-		
 		Random random = new Random();
 		int answer = random.nextInt(100)+1;
 		
@@ -65,12 +74,9 @@ public class Calc {
 		System.out.println("    "+"[숫자맞추기게임 시작]"+"    ");
 		System.out.println("=============================");
 		System.out.print(">>");
-		
-
 		int a = 0;
 		
 		while (a==0) {
-		
 		int num1 = sc.nextInt();
 		
 		if (answer < num1) {
@@ -118,7 +124,6 @@ public class Calc {
 			}
 			else {
 				GW = "건강검진 해 아님";
-				
 			}
 			if (age>=40) {
 				canc = "암검사 해";
@@ -127,23 +132,21 @@ public class Calc {
 				canc = "암검사 X";
 			}
 		}
-		
 		else if (age>=0&&age<20) {
 			System.out.println("20살 미만 건강검진 대상이 아님");
 		}
-		
 		else {
 			System.out.println("잘못된 정보입니다.");
 		}
 		System.out.println(GW!=null?GW:"");
 		System.out.println(canc!=null?canc:"");
 	}
+	
 	public static void faran(Scanner sc) {
 		System.out.print("화씨: ");
 		double F = sc.nextDouble();
 		double C = (5.0/9.0) * (F-32);
 		System.out.println("화씨 " + F + " 의 섭씨온도는 "+ C +" 입니다.");
-		
 	}
 	
 	public static void V(Scanner sc) {
@@ -159,9 +162,9 @@ public class Calc {
 		double key = sc.nextDouble();
 		System.out.print("몸무게: ");
 		double mom = sc.nextDouble();
-		
 		double BMI = mom / Math.pow(key/100,2);
 		String Stat = null;
+		
 		if (BMI>=18.5 && BMI <= 24.9) {
 			Stat = "정상체중";
 		}
