@@ -22,6 +22,7 @@ public class P {
 	            answer=0;
 	            System.out.println(0);
 	            }
+	            sc.close();
 	}
 	
 
