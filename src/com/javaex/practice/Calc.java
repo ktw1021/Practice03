@@ -1,5 +1,6 @@
 package com.javaex.practice;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -14,6 +15,8 @@ public class Calc {
 		while(initi==0) {
 		
 		System.out.println("1.숫자 놀이\t2.건강 검진\t3.화씨 변환\t4.구의 부피\t5.BMI\t\n6.달러 환전\t7.마일 변환\t8.소득세 계산\t9.사칙연산\n0.종료");
+		
+		try {
 		int select = sc.nextInt();
 		
 		switch (select) {
@@ -56,7 +59,12 @@ public class Calc {
 			case 0:
 			initi = 1;
 			break;
+			}
+		} catch (InputMismatchException e) {
+			System.out.println("올바른 숫자를 입력해주세요.\n프로그램을 종료합니다.");
+			break;
 		}
+		
 		
 		}
 		sc.close();
