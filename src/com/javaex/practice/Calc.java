@@ -61,7 +61,7 @@ public class Calc {
 			break;
 			}
 		} catch (InputMismatchException e) {
-			System.out.println("올바른 숫자를 입력해주세요.\n프로그램을 종료합니다.");
+			System.out.println("올바른 숫자를 입력해주세요.");
 			break;
 		}
 		
